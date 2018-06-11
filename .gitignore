@@ -1,0 +1,14 @@
+# ignore all executable files
+*.exe
+*.out
+
+# ignore the modification of config files
+*.ini
+
+# ignore text files
+*.csv
+*.txt
+
+# ignore figures;
+*.png
+*.jpg
