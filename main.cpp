@@ -155,6 +155,6 @@ int main() {
 
 	finish = clock();
 	cout << ">> It takes " << (finish - start)* 1.0/ CLOCKS_PER_SEC << " s" << endl;
-	//system("pause");
+	system("pause");
 	return 0;
 }
