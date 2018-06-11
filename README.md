@@ -7,14 +7,26 @@ This repository provides program and module to solve vehicle routing problem wit
 ## Compile
 Install gcc/g++ compiler using MinGW-win64 for Windows user, or using `apt-get` to install g++ for Liunx user.
 
-After that:
+- For Windows user:
 ```
-g++ -O2 ga.cpp get-config.cpp main.cpp -o run
+g++ -O2 ga.cpp get-config.cpp main.cpp -o run.exe
+```
+- For Linux user:
+```
+g++ -O2 ga.cpp get-config.cpp main.cpp -o run.out
 ```
 ## Excecution
+- For Windows user:
 ```
-./run
+run.exe
 ```
+- For Linux user:
+```
+./run.out
+```
+### Result visualization:
+*Data visualization requires `Python2.7` or `Python3.6`, with `numpy` and `matplotlib` package installed*
+
 Program can output optimal routing strategy to `optimal_strategy.csv`, its corresponding convergent curve of total path distance to `optimal_least_path.csv`. After that, use the following commond:
 ```
 python plt_result.py
@@ -27,16 +39,30 @@ Please find discription and comments in `config.ini`;
 ## 编译
 安装gcc/g++编译器。Windows用户可使用MinGW-win64软件包管理器安装，Linux用户直接通过`apt-get`命令安装g++即可。
 
-切换至仓库根目录下；
+切换至仓库根目录下。
+对于Windows用户，
 ```
-g++ -O2 ga.cpp get-config.cpp main.cpp -o run
+g++ -O2 ga.cpp get-config.cpp main.cpp -o run.exe
+```
+对于Linux用户，
+```
+g++ -O2 ga.cpp get-config.cpp main.cpp -o run.out
 ```
 
 ## 运行程序
-双击`run`或在命令指示符（Terminal）运行
+双击`run`或在命令指示符（Terminal）运行。
+对于Windows用户，
 ```
-./run
+run.exe
 ```
+对于Linux用户，
+```
+./run.out
+```
+
+### 数据可视化
+*数据可视化需要`Python2.7`或`Python3.6`环境，以及`numpy`和`matplotlib`包的支持*
+
 程序将生成最优车辆路径方案，输出到文件`optimal_strategy.csv`，以及其对应的最短路径随程序迭代的收敛关系，输出到文件`optimal_least_path.csv`。
 
 生成结果后，运行python脚本`plt_result.py`,进行数据结果可视化。
