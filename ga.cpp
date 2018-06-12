@@ -230,7 +230,7 @@ void VRP::PrintRoute(vector<int> &route, int car_num, bool depot_flag, bool outp
 	cout << ">> Route " << car_num <<	": ";
 	if (output_flag) {
 		ofstream ofile("optimal_strategy.csv", ios::app);
-		if (depot_flag) {
+		if (!depot_flag) {
 			cout << "0";
 			ofile << "0" << '\t';
 		} else {
@@ -242,7 +242,7 @@ void VRP::PrintRoute(vector<int> &route, int car_num, bool depot_flag, bool outp
 			cout << route[i] + 1 << " -> ";
 			ofile << route[i] + 1 << '\t';
 		}
-		if (depot_flag) {
+		if (!depot_flag) {
 			cout << "0" << '\n';
 			ofile << "0" << '\n';
 		} else {
@@ -251,13 +251,13 @@ void VRP::PrintRoute(vector<int> &route, int car_num, bool depot_flag, bool outp
 		}
 		ofile.close();
 	} else {
-		if (depot_flag) cout << "0";
+		if (!depot_flag) cout << "0";
 		else cout << depot_new_index;
 		cout << " -> ";
 		for (int i = 0; i < route.size(); i++ ) {
 			cout << route[i] + 1 << " -> ";
 		}
-		if (depot_flag) cout << "0" << endl;
+		if (!depot_flag) cout << "0" << endl;
 		else cout << depot_new_index << endl;
 	}
 }
